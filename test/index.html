@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>onError Test</title>
+  <script src="../build/build.js"></script>
+  <style>
+    div {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .pass {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="one"></div>
+  <div id="two"></div>
+  <div id="three"></div>
+  <script>
+    function pass (id) {
+      document.querySelector('#' + id).className = 'pass';
+    }
+
+    window.onerror = function () {
+      pass('one');
+    };
+
+    var onError = require('on-error');
+    onError(function () {
+      pass('two');
+    });
+    onError(function () {
+      pass('three');
+    });
+
+    throw new Error();
+  </script>
+</body>
+</html>
