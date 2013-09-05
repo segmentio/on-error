@@ -2,7 +2,7 @@
   "name": "on-error",
   "repo": "segmentio/on-error",
   "description": "Safely attach a handler to window.onerror.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": ["onerror", "error", "window"],
   "license": "MIT",
   "development": {

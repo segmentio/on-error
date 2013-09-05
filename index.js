@@ -24,9 +24,16 @@ if ('function' == typeof window.onerror) callbacks.push(window.onerror);
  * Bind to `window.onerror`.
  */
 
-window.onerror = function () {
+window.onerror = handler;
+
+
+/**
+ * Error handler.
+ */
+
+function handler () {
   for (var i = 0, fn; fn = callbacks[i]; i++) fn.apply(this, arguments);
-};
+}
 
 
 /**
@@ -37,4 +44,8 @@ window.onerror = function () {
 
 function onError (fn) {
   callbacks.push(fn);
+  if (window.onerror != handler) {
+    callbacks.push(window.onerror);
+    window.onerror = handler;
+  }
 }

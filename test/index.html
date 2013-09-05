@@ -18,23 +18,28 @@
   <div id="one"></div>
   <div id="two"></div>
   <div id="three"></div>
+  <div id="four"></div>
+  <div id="five"></div>
   <script>
     function pass (id) {
       document.querySelector('#' + id).className = 'pass';
     }
 
-    window.onerror = function () {
-      pass('one');
-    };
+    function passer (id) {
+      return function () {
+        pass(id);
+      };
+    }
+
+    window.onerror = passer('one');
 
     var onError = require('on-error');
-    onError(function () {
-      pass('two');
-    });
-    onError(function () {
-      pass('three');
-    });
+    onError(passer('two'));
+    onError(passer('three'));
 
+    window.onerror = passer('four');
+
+    onError(passer('five'));
     throw new Error();
   </script>
 </body>

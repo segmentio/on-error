@@ -1,7 +1,9 @@
 
 # on-error
 
-  Safely attach a handler to `window.onerror` regardless of existing handlers.
+  Safely attach a handler to `window.onerror` regardless of existing handlers. 
+
+  It will also rebind to `window.onerror` if another party clobbers it.
 
 ## Installation
 
