@@ -44,8 +44,4 @@ function handler () {
 
 function onError (fn) {
   callbacks.push(fn);
-  if (window.onerror != handler) {
-    callbacks.push(window.onerror);
-    window.onerror = handler;
-  }
 }

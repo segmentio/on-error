@@ -18,8 +18,6 @@
   <div id="one"></div>
   <div id="two"></div>
   <div id="three"></div>
-  <div id="four"></div>
-  <div id="five"></div>
   <script>
     function pass (id) {
       document.querySelector('#' + id).className = 'pass';
@@ -37,9 +35,6 @@
     onError(passer('two'));
     onError(passer('three'));
 
-    window.onerror = passer('four');
-
-    onError(passer('five'));
     throw new Error();
   </script>
 </body>
