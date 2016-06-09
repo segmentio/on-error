@@ -1,6 +1,6 @@
 {
   "name": "on-error",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "description": "attach an error handler to window.onerror",
   "main": "index.js",
   "directories": {

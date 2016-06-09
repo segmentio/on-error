@@ -1,3 +1,7 @@
+0.3.0 - June 8, 2016
+------------------------
+* Publish to npm
+
 0.2.0 - December 2, 2013
 ------------------------
 * remove rebinding, lol
